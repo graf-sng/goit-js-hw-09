@@ -16,7 +16,7 @@ img {
   display: block;
   max-width: 100%;
 }
-button {
+.task-1 button {
   width: 150px;
   height: 100px;
   font-size: 30px;
