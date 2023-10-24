@@ -2,6 +2,8 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+let difference = 0;
+
 const elements = {
   input: document.querySelector('[id="datetime-picker"]'),
   start: document.querySelector('[data-start]'),
@@ -10,14 +12,13 @@ const elements = {
   minutes: document.querySelector('[data-minutes]'),
   seconds: document.querySelector('[data-seconds]'),
 };
-
 const options = {
   enableTime: true,
   time_24hr: true,
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    let difference = selectedDates[0] - new Date();
+    difference = selectedDates[0] - new Date();
     if (difference < 0) {
       Notify.failure('Please choose a date in the future');
     } else {
