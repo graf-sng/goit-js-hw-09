@@ -17,7 +17,7 @@ const options = {
   defaultDate: new Date(),
   minuteIncrement: 1,
   onClose(selectedDates) {
-    difference = selectedDates[0] - new Date();
+    let difference = selectedDates[0] - new Date();
     if (difference < 0) {
       Notify.failure('Please choose a date in the future');
     } else {
